@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+# Controller
+use App\Http\Controllers\SendEmailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +26,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// Sending Email Route
+Route::get('/send-email', [SendEmailController::class, 'index']);
